@@ -10,8 +10,8 @@ namespace Calculator
             string firstValue = Console.ReadLine();
             double firstDouble = Convert.ToDouble(firstValue);
 
-            //Console.WriteLine("Enter a mathematical operation followed by enter");
-            //string operation = Console.ReadLine();
+            Console.WriteLine("Enter a mathematical operation followed by enter");
+            string operation = Console.ReadLine();
 
             Console.WriteLine("Enter a second value followed by enter");
             string secondValue = Console.ReadLine();
@@ -19,13 +19,42 @@ namespace Calculator
 
             Console.WriteLine("Calculating...");
 
-            double result = firstDouble + secondDouble;
-           
-            Console.WriteLine(result);
+            double result = 0;
+         
+            
+            void PerformCalculation(double firstDouble, string operation, double secondDouble)
+            {
+                if (operation == "+")
+                {
+                    result = firstDouble + secondDouble;
+                }
+
+                else if (operation == "-")
+                {
+                    result = firstDouble - secondDouble;
+                }
+
+                else if (operation == "*")
+                {
+                    result = firstDouble * secondDouble;
+                }
+
+                else if (operation == "/")
+                {
+                    result = firstDouble / secondDouble;
+                }
+
+                else
+                {
+                    Console.WriteLine("Does not compute!");
+                }
+
+            }
 
 
+            PerformCalculation(firstDouble, operation, secondDouble);
 
-
+            Console.WriteLine($"The answer is {result}");
 
         }
     }
